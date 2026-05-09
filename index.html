@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>达播成本结算 · 春10期</title>
+<style>*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'PingFang SC','Helvetica Neue','Microsoft YaHei',sans-serif;background:#f2f5f9;color:#2c3a4a;line-height:1.5;}
+.topnav{position:sticky;top:0;z-index:100;background:#3a5a8a;display:flex;align-items:center;padding:0 28px;gap:4px;box-shadow:0 2px 12px rgba(0,0,0,.18);overflow-x:auto;}
+.topnav .logo{color:rgba(255,255,255,.95);font-weight:700;font-size:13px;padding:14px 18px 14px 0;border-right:1px solid rgba(255,255,255,.2);margin-right:4px;white-space:nowrap;}
+.topnav a{color:rgba(255,255,255,.75);text-decoration:none;padding:14px 16px;font-size:12px;white-space:nowrap;border-radius:4px;}
+.topnav a:hover{background:rgba(255,255,255,.14);color:white;}
+.hero{background:linear-gradient(135deg,#3a5a8a 0%,#4e729c 60%,#6a8fba 100%);color:white;padding:32px 40px 28px;}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.hero-eyebrow-tag{font-size:11px;font-weight:600;letter-spacing:1.5px;opacity:.65;}
+.hero-eyebrow-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.4);}
+.hero-eyebrow-date{font-size:11px;background:rgba(255,255,255,.18);border-radius:20px;padding:2px 10px;font-weight:600;}
+.hero-title{font-size:28px;font-weight:800;line-height:1.2;margin-bottom:18px;}
+.hero-title .period{font-size:16px;font-weight:600;opacity:.8;margin-left:10px;vertical-align:middle;}
+.hero-meta{display:flex;align-items:center;gap:24px;flex-wrap:wrap;padding-top:16px;border-top:1px solid rgba(255,255,255,.15);}
+.hero-meta-item{display:flex;flex-direction:column;align-items:center;}
+.hero-meta-val{font-size:32px;font-weight:900;line-height:1.1;}
+.hero-meta-val.sm{font-size:22px;}
+.hero-meta-lbl{font-size:10px;opacity:.6;margin-top:3px;white-space:nowrap;}
+.hero-meta-sep{width:1px;height:40px;background:rgba(255,255,255,.18);}
+.hero-meta-info{font-size:12px;opacity:.7;margin-left:auto;line-height:1.8;text-align:right;}
+.content{padding:28px 36px;display:flex;flex-direction:column;gap:20px;}
+.card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.08);}
+.card-title{color:white;font-size:13px;font-weight:700;padding:10px 18px;letter-spacing:.5px;}
+.table-wrap{overflow-x:auto;}.table-wrap.inner{border-radius:0 0 8px 8px;}
+table{width:max-content;min-width:100%;border-collapse:collapse;font-size:13px;}
+thead th{padding:9px 18px;text-align:center;white-space:nowrap;font-size:12px;}
+tbody td{border-bottom:1px solid #f0f3f7;text-align:center;padding:9px 18px;white-space:nowrap;font-weight:700;color:#1a2535;}
+tbody tr:last-child td{border-bottom:none;}
+tbody tr:hover td{background:#f7f9fc!important;}
+.td-left{text-align:left!important;padding-left:18px!important;font-weight:500!important;color:#3a4a5c!important;}
+.alert-cell{background:#fde8e8!important;color:#c0392b!important;font-weight:700!important;}
+.ch-block{border-bottom:1px solid #edf0f5;}.ch-block:last-child{border-bottom:none;}
+.ch-block[open] .expand-hint{display:none;}
+.ch-summary{padding:11px 18px;cursor:pointer;list-style:none;user-select:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;transition:.15s;}
+.ch-summary:hover{background:#f5f7fb;}.ch-summary::-webkit-details-marker{display:none;}
+.ch-name{font-weight:600;color:#2c3a4a;font-size:13px;}
+.ch-badge{font-size:11px;color:#6b7a90;background:#f0f3f8;padding:2px 10px;border-radius:10px;border:1px solid #dde3ee;}
+.ch-dot{display:inline-block;width:8px;height:8px;border-radius:50%;vertical-align:middle;flex-shrink:0;}
+.ch-dot.lg{width:10px;height:10px;}
+.expand-hint{font-size:11px;color:#aab4c4;margin-left:auto;}
+.tip{font-size:11px;color:#6b7a90;background:#f5f7fb;border-left:3px solid #c5d4e8;padding:6px 14px;display:block;}
+html{scroll-behavior:smooth;}</style></head><body>
+<nav class="topnav">
+  <div class="logo">💰 成本结算</div>
+  <a href="#summary">渠道汇总</a>
+  <a href="#detail">年级明细</a>
+  <a href="#price">单价参考</a>
+</nav>
+<div class="hero">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-tag">达播成本结算</span>
+    <span class="hero-eyebrow-dot"></span>
+    <span class="hero-eyebrow-date">💰 春10期</span>
+  </div>
+  <div class="hero-title">成本结算报告<span class="period">春10期</span></div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-val">¥20.41万</div>
+      <div class="hero-meta-lbl">总结算金额</div>
+    </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-val sm">1709</div>
+      <div class="hero-meta-lbl">总进班数（分母）</div>
+    </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-val sm">¥119.4248</div>
+      <div class="hero-meta-lbl">实际成本（元/单）</div>
+    </div>
+    <div class="hero-meta-sep"></div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-val sm">8</div>
+      <div class="hero-meta-lbl">结算渠道数</div>
+    </div>
+    <div class="hero-meta-info">
+      口径：售后状态 = 0（未退款）<br>
+      撞库补单：超5%部分按年级单价补结算
+    </div>
+  </div>
+</div>
+<div class="content">
+  <div id="summary"><div class="card">
+  <div class="card-title" style="background:#3a5a8a;">渠道结算汇总</div>
+  <div class="table-wrap"><table>
+    <thead><tr style="background:#edf2f9;color:#2d4d7a;font-weight:700;">
+      <th>渠道</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>撞库应结金额</th>
+      <th>单量应结金额</th><th>总结算金额</th>
+    </tr></thead><tbody><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#2e6b4f;"></span>领航</td>
+    <td>359</td><td>77</td><td>438</td>
+    <td class="alert-cell">17.66%</td>
+    <td>18.0</td><td>59.1</td>
+    <td>¥6,495.5</td>
+    <td>¥39,490.0</td>
+    <td style="font-weight:800;">¥45,985.5</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#2a4a8c;"></span>文思泉涌</td>
+    <td>0</td><td>3</td><td>3</td>
+    <td class="alert-cell">100.00%</td>
+    <td>0.0</td><td>0.0</td>
+    <td>¥0.0</td>
+    <td>¥0.0</td>
+    <td style="font-weight:800;">¥0.0</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#5a3060;"></span>合肥徽起</td>
+    <td>19</td><td>0</td><td>19</td>
+    <td >0.00%</td>
+    <td>1.0</td><td>0.0</td>
+    <td>¥0.0</td>
+    <td>¥0.0</td>
+    <td style="font-weight:800;">¥0.0</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#5c3d8f;"></span>最小年轮</td>
+    <td>1155</td><td>29</td><td>1184</td>
+    <td >2.45%</td>
+    <td>57.8</td><td>0.0</td>
+    <td>¥0.0</td>
+    <td>¥140,690.0</td>
+    <td style="font-weight:800;">¥140,690.0</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#2a5298;"></span>格物致知</td>
+    <td>117</td><td>0</td><td>117</td>
+    <td >0.00%</td>
+    <td>5.9</td><td>0.0</td>
+    <td>¥0.0</td>
+    <td>¥13,225.0</td>
+    <td style="font-weight:800;">¥13,225.0</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#b5451b;"></span>杭州三只咪</td>
+    <td>38</td><td>4</td><td>42</td>
+    <td class="alert-cell">9.52%</td>
+    <td>1.9</td><td>1.2</td>
+    <td>¥126.5</td>
+    <td>¥4,070.0</td>
+    <td style="font-weight:800;">¥4,196.5</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#5a4030;"></span>山东深山</td>
+    <td>8</td><td>0</td><td>8</td>
+    <td >0.00%</td>
+    <td>0.4</td><td>0.0</td>
+    <td>¥0.0</td>
+    <td>¥0.0</td>
+    <td style="font-weight:800;">¥0.0</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#999;"></span>未知渠道</td>
+    <td>12</td><td>6</td><td>18</td>
+    <td class="alert-cell">33.33%</td>
+    <td>0.3</td><td>0.0</td>
+    <td>¥0.0</td>
+    <td>¥0.0</td>
+    <td style="font-weight:800;">¥0.0</td>
+  </tr><tr style="background:#3a5a8a;color:white;font-weight:800;">
+  <td class="td-left" style="color:white!important;">总计</td>
+  <td>1708</td><td>119</td><td>1829</td><td></td>
+  <td>85.1</td><td>60.2</td>
+  <td>¥6,622.0</td><td>¥197,475.0</td>
+  <td>¥204,097.0</td>
+</tr></tbody></table></div></div></div>
+  <div id="detail"><div class="card">
+  <div class="card-title" style="background:#4a6f5a;">渠道 × 年级明细</div>
+  <div class="tip">点击渠道展开年级详情</div><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#2e6b4f;"></span>
+    <span class="ch-name">领航</span>
+    <span class="ch-badge">总结算 ¥45,985.5</span>
+    <span class="ch-badge" style="background:#fde8e8;color:#c0392b;border-color:#f5c6c6;">撞库率 17.66%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">初三(升高一)</td>
+      <td>189</td><td>22</td><td>212</td>
+      <td class="alert-cell">10.43%</td>
+      <td>9.5</td>
+      <td>12.6</td>
+      <td>¥110</td>
+      <td>¥1,380.5</td>
+      <td>¥20,790.0</td>
+      <td style="font-weight:800;">¥22,170.5</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr>
+      <td class="td-left">高一(升高二)</td>
+      <td>98</td><td>50</td><td>148</td>
+      <td class="alert-cell">33.78%</td>
+      <td>4.9</td>
+      <td>45.1</td>
+      <td>¥110</td>
+      <td>¥4,961.0</td>
+      <td>¥10,780.0</td>
+      <td style="font-weight:800;">¥15,741.0</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr>
+      <td class="td-left">高二(升高三)</td>
+      <td>72</td><td>5</td><td>78</td>
+      <td class="alert-cell">6.49%</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>¥110</td>
+      <td>¥154.0</td>
+      <td>¥7,920.0</td>
+      <td style="font-weight:800;">¥8,074.0</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>359</td><td>77</td><td>438</td><td></td>
+    <td>18.0</td><td>59.1</td><td></td>
+    <td>¥6,495.5</td><td>¥39,490.0</td>
+    <td style="color:#2e5a40;">¥45,985.5</td><td></td>
+  </tr></tbody></table></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#2a4a8c;"></span>
+    <span class="ch-name">文思泉涌</span>
+    <span class="ch-badge">总结算 ¥0.0</span>
+    <span class="ch-badge" style="background:#fde8e8;color:#c0392b;border-color:#f5c6c6;">撞库率 100.00%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">高一(升高二)</td>
+      <td>0</td><td>2</td><td>2</td>
+      <td class="alert-cell">—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（2单<10单）</td>
+    </tr><tr>
+      <td class="td-left">高二(升高三)</td>
+      <td>0</td><td>1</td><td>1</td>
+      <td class="alert-cell">—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（1单<10单）</td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>0</td><td>3</td><td>3</td><td></td>
+    <td>0.0</td><td>0.0</td><td></td>
+    <td>¥0.0</td><td>¥0.0</td>
+    <td style="color:#2e5a40;">¥0.0</td><td></td>
+  </tr></tbody></table></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#5a3060;"></span>
+    <span class="ch-name">合肥徽起</span>
+    <span class="ch-badge">总结算 ¥0.0</span>
+    <span class="ch-badge" style="">撞库率 0.00%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">初三(升高一)</td>
+      <td>8</td><td>0</td><td>8</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（8单<10单）</td>
+    </tr><tr>
+      <td class="td-left">高一(升高二)</td>
+      <td>7</td><td>0</td><td>7</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（7单<10单）</td>
+    </tr><tr>
+      <td class="td-left">高二(升高三)</td>
+      <td>4</td><td>0</td><td>4</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（4单<10单）</td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>19</td><td>0</td><td>19</td><td></td>
+    <td>1.0</td><td>0.0</td><td></td>
+    <td>¥0.0</td><td>¥0.0</td>
+    <td style="color:#2e5a40;">¥0.0</td><td></td>
+  </tr></tbody></table></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#5c3d8f;"></span>
+    <span class="ch-name">最小年轮</span>
+    <span class="ch-badge">总结算 ¥140,690.0</span>
+    <span class="ch-badge" style="">撞库率 2.45%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">初三(升高一)</td>
+      <td>946</td><td>24</td><td>970</td>
+      <td >2.47%</td>
+      <td>47.3</td>
+      <td>0.0</td>
+      <td>¥120</td>
+      <td>¥0.0</td>
+      <td>¥113,520.0</td>
+      <td style="font-weight:800;">¥113,520.0</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr>
+      <td class="td-left">高一(升高二)</td>
+      <td>144</td><td>4</td><td>148</td>
+      <td >2.7%</td>
+      <td>7.2</td>
+      <td>0.0</td>
+      <td>¥130</td>
+      <td>¥0.0</td>
+      <td>¥18,720.0</td>
+      <td style="font-weight:800;">¥18,720.0</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr>
+      <td class="td-left">高二(升高三)</td>
+      <td>65</td><td>1</td><td>66</td>
+      <td >1.52%</td>
+      <td>3.3</td>
+      <td>0.0</td>
+      <td>¥130</td>
+      <td>¥0.0</td>
+      <td>¥8,450.0</td>
+      <td style="font-weight:800;">¥8,450.0</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>1155</td><td>29</td><td>1184</td><td></td>
+    <td>57.8</td><td>0.0</td><td></td>
+    <td>¥0.0</td><td>¥140,690.0</td>
+    <td style="color:#2e5a40;">¥140,690.0</td><td></td>
+  </tr></tbody></table></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#2a5298;"></span>
+    <span class="ch-name">格物致知</span>
+    <span class="ch-badge">总结算 ¥13,225.0</span>
+    <span class="ch-badge" style="">撞库率 0.00%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">初三(升高一)</td>
+      <td>115</td><td>0</td><td>115</td>
+      <td >0%</td>
+      <td>5.8</td>
+      <td>0.0</td>
+      <td>¥115</td>
+      <td>¥0.0</td>
+      <td>¥13,225.0</td>
+      <td style="font-weight:800;">¥13,225.0</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr>
+      <td class="td-left">高二(升高三)</td>
+      <td>2</td><td>0</td><td>2</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（2单<10单）</td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>117</td><td>0</td><td>117</td><td></td>
+    <td>5.9</td><td>0.0</td><td></td>
+    <td>¥0.0</td><td>¥13,225.0</td>
+    <td style="color:#2e5a40;">¥13,225.0</td><td></td>
+  </tr></tbody></table></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#b5451b;"></span>
+    <span class="ch-name">杭州三只咪</span>
+    <span class="ch-badge">总结算 ¥4,196.5</span>
+    <span class="ch-badge" style="background:#fde8e8;color:#c0392b;border-color:#f5c6c6;">撞库率 9.52%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">初三(升高一)</td>
+      <td>37</td><td>3</td><td>40</td>
+      <td class="alert-cell">7.5%</td>
+      <td>1.9</td>
+      <td>1.2</td>
+      <td>¥110</td>
+      <td>¥126.5</td>
+      <td>¥4,070.0</td>
+      <td style="font-weight:800;">¥4,196.5</td>
+      <td style="color:#c0392b;font-size:11px;"></td>
+    </tr><tr>
+      <td class="td-left">高一(升高二)</td>
+      <td>0</td><td>1</td><td>1</td>
+      <td class="alert-cell">—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（1单<10单）</td>
+    </tr><tr>
+      <td class="td-left">高二(升高三)</td>
+      <td>1</td><td>0</td><td>1</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（1单<10单）</td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>38</td><td>4</td><td>42</td><td></td>
+    <td>1.9</td><td>1.2</td><td></td>
+    <td>¥126.5</td><td>¥4,070.0</td>
+    <td style="color:#2e5a40;">¥4,196.5</td><td></td>
+  </tr></tbody></table></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#5a4030;"></span>
+    <span class="ch-name">山东深山</span>
+    <span class="ch-badge">总结算 ¥0.0</span>
+    <span class="ch-badge" style="">撞库率 0.00%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">初三(升高一)</td>
+      <td>8</td><td>0</td><td>8</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（8单<10单）</td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>8</td><td>0</td><td>8</td><td></td>
+    <td>0.4</td><td>0.0</td><td></td>
+    <td>¥0.0</td><td>¥0.0</td>
+    <td style="color:#2e5a40;">¥0.0</td><td></td>
+  </tr></tbody></table></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#999;"></span>
+    <span class="ch-name">未知渠道</span>
+    <span class="ch-badge">总结算 ¥0.0</span>
+    <span class="ch-badge" style="background:#fde8e8;color:#c0392b;border-color:#f5c6c6;">撞库率 33.33%</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="table-wrap inner"><table>
+    <thead><tr style="background:#edf4f0;color:#2e5a40;font-weight:600;">
+      <th>年级</th><th>正常班</th><th>影子班</th><th>总单</th><th>撞库率</th>
+      <th>撞库5%基准</th><th>撞库应结订单</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th><th>备注</th>
+    </tr></thead><tbody><tr>
+      <td class="td-left">初三(升高一)</td>
+      <td>7</td><td>3</td><td>10</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">无单价</td>
+    </tr><tr>
+      <td class="td-left">高一(升高二)</td>
+      <td>3</td><td>3</td><td>6</td>
+      <td class="alert-cell">—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（6单<10单）</td>
+    </tr><tr>
+      <td class="td-left">高二(升高三)</td>
+      <td>2</td><td>0</td><td>2</td>
+      <td >—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td>—</td>
+      <td style="font-weight:800;">—</td>
+      <td style="color:#c0392b;font-size:11px;">不结算（2单<10单）</td>
+    </tr><tr style="background:#f2f6f0;font-weight:800;">
+    <td class="td-left" style="color:#2e5a40!important;">小计</td>
+    <td>12</td><td>6</td><td>18</td><td></td>
+    <td>0.3</td><td>0.0</td><td></td>
+    <td>¥0.0</td><td>¥0.0</td>
+    <td style="color:#2e5a40;">¥0.0</td><td></td>
+  </tr></tbody></table></div></details></div></div>
+  <div id="price"><div class="card">
+  <div class="card-title" style="background:#5c3d8f;">单价参考表</div>
+  <div class="table-wrap"><table>
+    <thead><tr style="background:#f0ebff;color:#4a148c;font-weight:700;">
+      <th>渠道</th><th>初三(年级9)</th><th>高一(年级10)</th><th>高二(年级11)</th><th>高三(年级12)</th><th>备注</th>
+    </tr></thead><tbody><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#2e6b4f;"></span>领航</td>
+    <td>¥110</td><td>¥110</td>
+    <td>¥110</td><td>¥110</td>
+    <td style="font-size:11px;color:#888;"></td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#2a4a8c;"></span>文思泉涌</td>
+    <td>¥130</td><td>¥130</td>
+    <td>¥130</td><td>¥130</td>
+    <td style="font-size:11px;color:#888;"></td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#5a3060;"></span>合肥徽起</td>
+    <td>¥110</td><td>¥130</td>
+    <td>¥130</td><td>¥130</td>
+    <td style="font-size:11px;color:#888;"></td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#5c3d8f;"></span>最小年轮</td>
+    <td>¥120</td><td>¥130</td>
+    <td>¥130</td><td>¥130</td>
+    <td style="font-size:11px;color:#888;"></td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#2a5298;"></span>格物致知</td>
+    <td>¥115</td><td>¥115</td>
+    <td>¥115</td><td>¥115</td>
+    <td style="font-size:11px;color:#888;">1000单以上+¥5（本期未触发）</td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#b5451b;"></span>杭州三只咪</td>
+    <td>¥110</td><td>¥130</td>
+    <td>¥130</td><td>¥130</td>
+    <td style="font-size:11px;color:#888;"></td>
+  </tr><tr>
+    <td class="td-left"><span class="ch-dot" style="background:#5a4030;"></span>山东深山</td>
+    <td>¥130</td><td>¥130</td>
+    <td>¥130</td><td>¥130</td>
+    <td style="font-size:11px;color:#888;"></td>
+  </tr></tbody></table></div></div></div>
+</div>
+</body></html>
