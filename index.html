@@ -28,26 +28,36 @@ body{font-family:'PingFang SC','Helvetica Neue','Microsoft YaHei',sans-serif;bac
 .table-wrap{overflow-x:auto;}
 table{width:max-content;min-width:100%;border-collapse:collapse;font-size:13px;}
 thead th{padding:9px 18px;text-align:center;white-space:nowrap;font-size:12px;}
-tbody td{border-bottom:1px solid #f0f3f7;text-align:center;padding:9px 18px;white-space:nowrap;font-weight:700;color:#1a2535;}
+tbody td{border-bottom:1px solid #f0f3f7;text-align:center;padding:8px 18px;white-space:nowrap;font-weight:700;color:#1a2535;}
 tbody tr:last-child td{border-bottom:none;}
 tbody tr:hover td{background:#f7f9fc!important;}
 .td-left{text-align:left!important;padding-left:18px!important;font-weight:500!important;color:#3a4a5c!important;}
 .alert-cell{background:#fde8e8!important;color:#c0392b!important;font-weight:700!important;}
 .ch-block{border-bottom:1px solid #edf0f5;}.ch-block:last-child{border-bottom:none;}
 .ch-block[open] .expand-hint{display:none;}
-.ch-summary{padding:11px 18px;cursor:pointer;list-style:none;user-select:none;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.ch-summary{padding:11px 18px;cursor:pointer;list-style:none;user-select:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
 .ch-summary:hover{background:#f5f7fb;}.ch-summary::-webkit-details-marker{display:none;}
 .ch-name{font-weight:600;color:#2c3a4a;font-size:13px;}
-.ch-badge{font-size:11px;color:#6b7a90;background:#f0f3f8;padding:2px 10px;border-radius:10px;border:1px solid #dde3ee;}
+.ch-badge{font-size:11px;color:#6b7a90;background:#f0f3f8;padding:2px 10px;border-radius:10px;border:1px solid #dde3ee;white-space:nowrap;}
 .ch-dot{display:inline-block;width:8px;height:8px;border-radius:50%;vertical-align:middle;flex-shrink:0;}
 .ch-dot.lg{width:10px;height:10px;}
-.expand-hint{font-size:11px;color:#aab4c4;margin-left:auto;}
+.expand-hint{font-size:11px;color:#aab4c4;margin-left:auto;flex-shrink:0;}
 .tip{font-size:11px;color:#6b7a90;background:#f5f7fb;border-left:3px solid #c5d4e8;padding:6px 14px;display:block;}
+.inf-list{background:#fafbfc;}
+.inf-block{border-bottom:1px solid #eef1f6;}.inf-block:last-of-type{border-bottom:none;}
+.inf-block[open] .expand-hint{display:none;}
+.inf-summary{padding:9px 18px 9px 36px;cursor:pointer;list-style:none;user-select:none;display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;}
+.inf-summary:hover{background:#f0f3f8;}.inf-summary::-webkit-details-marker{display:none;}
+.inf-rank{font-size:11px;color:#aab4c4;font-weight:700;min-width:20px;}
+.inf-name{font-weight:600;color:#2c3a4a;min-width:80px;}
+.inf-id{font-size:10px;color:#aab4c4;font-family:monospace;}
+.inf-subtotal{padding:8px 18px 8px 36px;font-size:12px;color:#6b7a90;background:#f5f7fb;border-top:1px solid #edf0f5;}
+.inf-subtotal b{color:#2e5a40;}
 code{background:#f0f3f8;padding:1px 5px;border-radius:4px;font-size:11px;}
 html{scroll-behavior:smooth;}</style></head><body>
 <nav class="topnav">
   <div class="logo">💰 成本结算</div>
-  <a href="#summary">渠道汇总</a><a href="#detail">年级明细</a><a href="#price">单价参考</a>
+  <a href="#summary">渠道汇总</a><a href="#detail">年级明细</a><a href="#inf">达人明细</a><a href="#price">单价参考</a>
 </nav>
 <div class="hero">
   <div class="hero-eyebrow">
@@ -441,6 +451,1751 @@ html{scroll-behavior:smooth;}</style></head><body>
     <b>达人ID为空</b>（字段值：<code>达人ID:</code>），共 18 单，判定为自然流进量，不参与结算。
   </div>
 </details></div></div>
+  <div id="inf"><div class="card">
+  <div class="card-title" style="background:#5a4a7a;">渠道达人明细</div>
+  <div class="tip">按渠道展开 → 查看该渠道所有达人；再展开达人 → 查看年级拆分</div><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#5c3d8f;"></span>
+    <span class="ch-name">最小年轮</span>
+    <span class="ch-badge">23 个达人</span>
+    <span class="ch-badge">总结算 ¥140,690.0</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="inf-list"><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">1</span>
+        <span class="inf-name">李老师讲初升高</span>
+        <span class="inf-id">877887641889924</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 380</span>
+        <span class="ch-badge">影子班 12</span>
+        <span class="ch-badge">撞库率 3.1%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥45,863.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>379</td><td>10</td>
+        <td >2.57%</td>
+        <td>19.0</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥45,480.0</td>
+        <td style="font-weight:800;">¥45,480.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>1</td><td>2</td>
+        <td class="alert-cell">66.67%</td>
+        <td>0.1</td><td>2.0</td>
+        <td>¥130</td>
+        <td>¥253.5</td><td>¥130.0</td>
+        <td style="font-weight:800;">¥383.5</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">2</span>
+        <span class="inf-name">一线王老师讲选科</span>
+        <span class="inf-id">3723369751789440</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 114</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 0.9%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥14,285.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>58</td><td>0</td>
+        <td >0%</td>
+        <td>2.9</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥6,960.0</td>
+        <td style="font-weight:800;">¥6,960.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>43</td><td>0</td>
+        <td >0%</td>
+        <td>2.2</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥5,590.0</td>
+        <td style="font-weight:800;">¥5,590.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>13</td><td>1</td>
+        <td class="alert-cell">7.14%</td>
+        <td>0.7</td><td>0.4</td>
+        <td>¥130</td>
+        <td>¥45.5</td><td>¥1,690.0</td>
+        <td style="font-weight:800;">¥1,735.5</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">3</span>
+        <span class="inf-name">郝老师聊选科-行知</span>
+        <span class="inf-id">2698666779614720</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 103</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥12,510.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>88</td><td>0</td>
+        <td >0%</td>
+        <td>4.4</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥10,560.0</td>
+        <td style="font-weight:800;">¥10,560.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>12</td><td>0</td>
+        <td >0%</td>
+        <td>0.6</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,560.0</td>
+        <td style="font-weight:800;">¥1,560.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>3</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥390.0</td>
+        <td style="font-weight:800;">¥390.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">4</span>
+        <span class="inf-name">刘老师讲中考a</span>
+        <span class="inf-id">3080202491541930</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 85</span>
+        <span class="ch-badge">影子班 3</span>
+        <span class="ch-badge">撞库率 3.4%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥10,200.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>85</td><td>3</td>
+        <td >3.41%</td>
+        <td>4.3</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥10,200.0</td>
+        <td style="font-weight:800;">¥10,200.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">5</span>
+        <span class="inf-name">行知老师讲规划</span>
+        <span class="inf-id">781124537700132</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 78</span>
+        <span class="ch-badge">影子班 2</span>
+        <span class="ch-badge">撞库率 2.5%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥9,500.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>64</td><td>2</td>
+        <td >3.03%</td>
+        <td>3.2</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥7,680.0</td>
+        <td style="font-weight:800;">¥7,680.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>14</td><td>0</td>
+        <td >0%</td>
+        <td>0.7</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,820.0</td>
+        <td style="font-weight:800;">¥1,820.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">6</span>
+        <span class="inf-name">王老师说选科</span>
+        <span class="inf-id">4132378346809803</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 72</span>
+        <span class="ch-badge">影子班 2</span>
+        <span class="ch-badge">撞库率 2.7%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥8,720.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>64</td><td>2</td>
+        <td >3.03%</td>
+        <td>3.2</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥7,680.0</td>
+        <td style="font-weight:800;">¥7,680.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,040.0</td>
+        <td style="font-weight:800;">¥1,040.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">7</span>
+        <span class="inf-name">升学规划.田雨</span>
+        <span class="inf-id">sph5oMXL9hozXIs</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 61</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 1.6%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥7,500.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>43</td><td>1</td>
+        <td >2.27%</td>
+        <td>2.2</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥5,160.0</td>
+        <td style="font-weight:800;">¥5,160.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>16</td><td>0</td>
+        <td >0%</td>
+        <td>0.8</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥2,080.0</td>
+        <td style="font-weight:800;">¥2,080.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥260.0</td>
+        <td style="font-weight:800;">¥260.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">8</span>
+        <span class="inf-name">董老师讲选科</span>
+        <span class="inf-id">2628305521218227</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 61</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 1.6%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥7,420.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>51</td><td>1</td>
+        <td >1.92%</td>
+        <td>2.6</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥6,120.0</td>
+        <td style="font-weight:800;">¥6,120.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>9</td><td>0</td>
+        <td >0%</td>
+        <td>0.5</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,170.0</td>
+        <td style="font-weight:800;">¥1,170.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥130.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">9</span>
+        <span class="inf-name">田老师讲选科</span>
+        <span class="inf-id">3314390116871754</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 50</span>
+        <span class="ch-badge">影子班 3</span>
+        <span class="ch-badge">撞库率 5.7%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥6,188.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>42</td><td>3</td>
+        <td class="alert-cell">6.67%</td>
+        <td>2.1</td><td>0.9</td>
+        <td>¥120</td>
+        <td>¥108.0</td><td>¥5,040.0</td>
+        <td style="font-weight:800;">¥5,148.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,040.0</td>
+        <td style="font-weight:800;">¥1,040.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">10</span>
+        <span class="inf-name">孙老师思维课堂-一起考</span>
+        <span class="inf-id">3731095152234391</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 33</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 2.9%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥4,364.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥120.0</td>
+        <td style="font-weight:800;">¥120.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>7</td><td>1</td>
+        <td class="alert-cell">12.5%</td>
+        <td>0.4</td><td>0.7</td>
+        <td>¥130</td>
+        <td>¥84.5</td><td>¥910.0</td>
+        <td style="font-weight:800;">¥994.5</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>25</td><td>0</td>
+        <td >0%</td>
+        <td>1.3</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥3,250.0</td>
+        <td style="font-weight:800;">¥3,250.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">11</span>
+        <span class="inf-name">晶晶老师升学规划</span>
+        <span class="inf-id">7618459559250658362</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 30</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥3,780.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>12</td><td>0</td>
+        <td >0%</td>
+        <td>0.6</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥1,440.0</td>
+        <td style="font-weight:800;">¥1,440.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,040.0</td>
+        <td style="font-weight:800;">¥1,040.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>10</td><td>0</td>
+        <td >0%</td>
+        <td>0.5</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,300.0</td>
+        <td style="font-weight:800;">¥1,300.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">12</span>
+        <span class="inf-name">珊伊老师讲高考</span>
+        <span class="inf-id">7618478902747268154</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 28</span>
+        <span class="ch-badge">影子班 2</span>
+        <span class="ch-badge">撞库率 6.7%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥3,646.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>12</td><td>1</td>
+        <td class="alert-cell">7.69%</td>
+        <td>0.6</td><td>0.4</td>
+        <td>¥120</td>
+        <td>¥48.0</td><td>¥1,440.0</td>
+        <td style="font-weight:800;">¥1,488.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>8</td><td>1</td>
+        <td class="alert-cell">11.11%</td>
+        <td>0.4</td><td>0.6</td>
+        <td>¥130</td>
+        <td>¥78.0</td><td>¥1,040.0</td>
+        <td style="font-weight:800;">¥1,118.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,040.0</td>
+        <td style="font-weight:800;">¥1,040.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">13</span>
+        <span class="inf-name">(无名称)</span>
+        <span class="inf-id">3560655619628720</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 20</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥2,400.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>20</td><td>0</td>
+        <td >0%</td>
+        <td>1.0</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥2,400.0</td>
+        <td style="font-weight:800;">¥2,400.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">14</span>
+        <span class="inf-name">唐老师高考规划</span>
+        <span class="inf-id">sphrjA29ih0cHM7</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 9</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥1,120.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>5</td><td>0</td>
+        <td >0%</td>
+        <td>0.3</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥600.0</td>
+        <td style="font-weight:800;">¥600.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>4</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥520.0</td>
+        <td style="font-weight:800;">¥520.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">15</span>
+        <span class="inf-name">黄老师讲选科</span>
+        <span class="inf-id">106483688450</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 9</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥1,100.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>7</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥840.0</td>
+        <td style="font-weight:800;">¥840.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥260.0</td>
+        <td style="font-weight:800;">¥260.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">16</span>
+        <span class="inf-name">(无名称)</span>
+        <span class="inf-id">7621153598730519601</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 7</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥850.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>6</td><td>0</td>
+        <td >0%</td>
+        <td>0.3</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥720.0</td>
+        <td style="font-weight:800;">¥720.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥130.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">17</span>
+        <span class="inf-name">赵老师讲选科</span>
+        <span class="inf-id">sphV2x9MokpPbgA</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 3</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥360.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>3</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥360.0</td>
+        <td style="font-weight:800;">¥360.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">18</span>
+        <span class="inf-name">中考志愿填报刘老师</span>
+        <span class="inf-id">7544198817479623738</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 3</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 25.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥462.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>3</td><td>1</td>
+        <td class="alert-cell">25%</td>
+        <td>0.2</td><td>0.9</td>
+        <td>¥120</td>
+        <td>¥102.0</td><td>¥360.0</td>
+        <td style="font-weight:800;">¥462.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">19</span>
+        <span class="inf-name">金榜题名</span>
+        <span class="inf-id">1139565566637984</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 3</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥390.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥260.0</td>
+        <td style="font-weight:800;">¥260.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥130.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">20</span>
+        <span class="inf-name">邬老师讲规划</span>
+        <span class="inf-id">sphTGllVFlCzNTr</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 2</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥260.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥260.0</td>
+        <td style="font-weight:800;">¥260.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">21</span>
+        <span class="inf-name">郑州中考大实话</span>
+        <span class="inf-id">3345190403447164</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 2</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥240.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥240.0</td>
+        <td style="font-weight:800;">¥240.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">22</span>
+        <span class="inf-name">刘老师讲中考</span>
+        <span class="inf-id">1506765289557642</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 1</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥120.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥120</td>
+        <td>¥0.0</td><td>¥120.0</td>
+        <td style="font-weight:800;">¥120.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">23</span>
+        <span class="inf-name">刘老师升学规划(升知维)</span>
+        <span class="inf-id">1910272284440592</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 1</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥130.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥130.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><div class="inf-subtotal">
+    <span>小计：23 个达人 &nbsp;·&nbsp; 正常班 1155 &nbsp;·&nbsp; 影子班 29 &nbsp;·&nbsp; 总结算 <b>¥140,690.0</b></span>
+  </div></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#2e6b4f;"></span>
+    <span class="ch-name">领航</span>
+    <span class="ch-badge">17 个达人</span>
+    <span class="ch-badge">总结算 ¥45,985.5</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="inf-list"><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">1</span>
+        <span class="inf-name">陈老师升学规划</span>
+        <span class="inf-id">7441825917272654906</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 51</span>
+        <span class="ch-badge">影子班 8</span>
+        <span class="ch-badge">撞库率 13.6%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥6,209.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>17</td><td>1</td>
+        <td class="alert-cell">5.56%</td>
+        <td>0.9</td><td>0.2</td>
+        <td>¥110</td>
+        <td>¥16.5</td><td>¥1,870.0</td>
+        <td style="font-weight:800;">¥1,886.5</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>22</td><td>6</td>
+        <td class="alert-cell">21.43%</td>
+        <td>1.1</td><td>4.9</td>
+        <td>¥110</td>
+        <td>¥539.0</td><td>¥2,420.0</td>
+        <td style="font-weight:800;">¥2,959.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>12</td><td>1</td>
+        <td class="alert-cell">7.69%</td>
+        <td>0.6</td><td>0.4</td>
+        <td>¥110</td>
+        <td>¥44.0</td><td>¥1,320.0</td>
+        <td style="font-weight:800;">¥1,364.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">2</span>
+        <span class="inf-name">刘老师升学规划</span>
+        <span class="inf-id">1822353191078284</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 46</span>
+        <span class="ch-badge">影子班 17</span>
+        <span class="ch-badge">撞库率 27.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥6,677.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>22</td><td>4</td>
+        <td class="alert-cell">15.38%</td>
+        <td>1.1</td><td>2.9</td>
+        <td>¥110</td>
+        <td>¥319.0</td><td>¥2,420.0</td>
+        <td style="font-weight:800;">¥2,739.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>12</td><td>12</td>
+        <td class="alert-cell">50%</td>
+        <td>0.6</td><td>11.4</td>
+        <td>¥110</td>
+        <td>¥1,254.0</td><td>¥1,320.0</td>
+        <td style="font-weight:800;">¥2,574.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>12</td><td>1</td>
+        <td class="alert-cell">7.69%</td>
+        <td>0.6</td><td>0.4</td>
+        <td>¥110</td>
+        <td>¥44.0</td><td>¥1,320.0</td>
+        <td style="font-weight:800;">¥1,364.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">3</span>
+        <span class="inf-name">高中班主任张老师升学</span>
+        <span class="inf-id">7587611061567915045</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 43</span>
+        <span class="ch-badge">影子班 20</span>
+        <span class="ch-badge">撞库率 31.7%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥6,693.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>17</td><td>6</td>
+        <td class="alert-cell">26.09%</td>
+        <td>0.9</td><td>5.2</td>
+        <td>¥110</td>
+        <td>¥566.5</td><td>¥1,870.0</td>
+        <td style="font-weight:800;">¥2,436.5</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>16</td><td>12</td>
+        <td class="alert-cell">42.86%</td>
+        <td>0.8</td><td>11.2</td>
+        <td>¥110</td>
+        <td>¥1,232.0</td><td>¥1,760.0</td>
+        <td style="font-weight:800;">¥2,992.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>10</td><td>2</td>
+        <td class="alert-cell">16.67%</td>
+        <td>0.5</td><td>1.5</td>
+        <td>¥110</td>
+        <td>¥165.0</td><td>¥1,100.0</td>
+        <td style="font-weight:800;">¥1,265.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">4</span>
+        <span class="inf-name">升学规划雯老师-泓图</span>
+        <span class="inf-id">543629702086489</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 43</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 2.3%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥4,730.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>37</td><td>1</td>
+        <td >2.63%</td>
+        <td>1.9</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥4,070.0</td>
+        <td style="font-weight:800;">¥4,070.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>5</td><td>0</td>
+        <td >0%</td>
+        <td>0.3</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥550.0</td>
+        <td style="font-weight:800;">¥550.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">5</span>
+        <span class="inf-name">高中生升学规划</span>
+        <span class="inf-id">965825250986522</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 39</span>
+        <span class="ch-badge">影子班 19</span>
+        <span class="ch-badge">撞库率 32.8%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥6,193.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>21</td><td>5</td>
+        <td class="alert-cell">19.23%</td>
+        <td>1.1</td><td>4.0</td>
+        <td>¥110</td>
+        <td>¥434.5</td><td>¥2,310.0</td>
+        <td style="font-weight:800;">¥2,744.5</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>13</td><td>14</td>
+        <td class="alert-cell">51.85%</td>
+        <td>0.7</td><td>13.4</td>
+        <td>¥110</td>
+        <td>¥1,468.5</td><td>¥1,430.0</td>
+        <td style="font-weight:800;">¥2,898.5</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>5</td><td>0</td>
+        <td >0%</td>
+        <td>0.3</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥550.0</td>
+        <td style="font-weight:800;">¥550.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">6</span>
+        <span class="inf-name">马老师升学规划</span>
+        <span class="inf-id">3129663084568048</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 29</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥3,190.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>26</td><td>0</td>
+        <td >0%</td>
+        <td>1.3</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥2,860.0</td>
+        <td style="font-weight:800;">¥2,860.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>3</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥330.0</td>
+        <td style="font-weight:800;">¥330.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">7</span>
+        <span class="inf-name">升学规划白老师</span>
+        <span class="inf-id">7605224029037511729</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 28</span>
+        <span class="ch-badge">影子班 10</span>
+        <span class="ch-badge">撞库率 26.3%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥4,026.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>6</td><td>3</td>
+        <td class="alert-cell">33.33%</td>
+        <td>0.3</td><td>2.7</td>
+        <td>¥110</td>
+        <td>¥297.0</td><td>¥660.0</td>
+        <td style="font-weight:800;">¥957.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>11</td><td>6</td>
+        <td class="alert-cell">35.29%</td>
+        <td>0.6</td><td>5.5</td>
+        <td>¥110</td>
+        <td>¥599.5</td><td>¥1,210.0</td>
+        <td style="font-weight:800;">¥1,809.5</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>11</td><td>1</td>
+        <td class="alert-cell">8.33%</td>
+        <td>0.6</td><td>0.5</td>
+        <td>¥110</td>
+        <td>¥49.5</td><td>¥1,210.0</td>
+        <td style="font-weight:800;">¥1,259.5</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">8</span>
+        <span class="inf-name">赵主任讲女生规划</span>
+        <span class="inf-id">sph1bwu1FvCHf2c</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 24</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥2,640.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥880.0</td>
+        <td style="font-weight:800;">¥880.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>3</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥330.0</td>
+        <td style="font-weight:800;">¥330.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>13</td><td>0</td>
+        <td >0%</td>
+        <td>0.7</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥1,430.0</td>
+        <td style="font-weight:800;">¥1,430.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">9</span>
+        <span class="inf-name">郑州中考规划</span>
+        <span class="inf-id">7475600768315589689</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 14</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥1,540.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>14</td><td>0</td>
+        <td >0%</td>
+        <td>0.7</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥1,540.0</td>
+        <td style="font-weight:800;">¥1,540.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">10</span>
+        <span class="inf-name">(无名称)</span>
+        <span class="inf-id">1220921040320652</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 11</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 8.3%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥1,281.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>7</td><td>1</td>
+        <td class="alert-cell">12.5%</td>
+        <td>0.4</td><td>0.7</td>
+        <td>¥110</td>
+        <td>¥71.5</td><td>¥770.0</td>
+        <td style="font-weight:800;">¥841.5</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>4</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥440.0</td>
+        <td style="font-weight:800;">¥440.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">11</span>
+        <span class="inf-name">小满老师讲选科规划🎓</span>
+        <span class="inf-id">1871837350079980</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 10</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥1,100.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥880.0</td>
+        <td style="font-weight:800;">¥880.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">12</span>
+        <span class="inf-name">张利老师聊升学（慧润文化）</span>
+        <span class="inf-id">2130216359037448</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 8</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥880.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>4</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥440.0</td>
+        <td style="font-weight:800;">¥440.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>3</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥330.0</td>
+        <td style="font-weight:800;">¥330.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">13</span>
+        <span class="inf-name">王老师聊高考规划</span>
+        <span class="inf-id">96607792455</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 7</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥770.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥220.0</td>
+        <td style="font-weight:800;">¥220.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>4</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥440.0</td>
+        <td style="font-weight:800;">¥440.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">14</span>
+        <span class="inf-name">(无名称)</span>
+        <span class="inf-id">sphvTObu2vLgd73</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 2</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥220.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">15</span>
+        <span class="inf-name">(无名称)</span>
+        <span class="inf-id">7550105753559548986</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 2</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 33.3%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥319.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>2</td><td>1</td>
+        <td class="alert-cell">33.33%</td>
+        <td>0.1</td><td>0.9</td>
+        <td>¥110</td>
+        <td>¥99.0</td><td>¥220.0</td>
+        <td style="font-weight:800;">¥319.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">16</span>
+        <span class="inf-name">宋老师聊升学</span>
+        <span class="inf-id">1335238089530800</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 1</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥110.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">17</span>
+        <span class="inf-name">高中升学规划</span>
+        <span class="inf-id">1669475764547225</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 1</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥110.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥110.0</td>
+      </tr></tbody></table></div></details><div class="inf-subtotal">
+    <span>小计：17 个达人 &nbsp;·&nbsp; 正常班 359 &nbsp;·&nbsp; 影子班 77 &nbsp;·&nbsp; 总结算 <b>¥45,985.5</b></span>
+  </div></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#2a5298;"></span>
+    <span class="ch-name">格物致知</span>
+    <span class="ch-badge">2 个达人</span>
+    <span class="ch-badge">总结算 ¥13,455.0</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="inf-list"><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">1</span>
+        <span class="inf-name">樊老师读书分享</span>
+        <span class="inf-id">sphLB7hfWdKdIrx</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 74</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥8,510.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>72</td><td>0</td>
+        <td >0%</td>
+        <td>3.6</td><td>0.0</td>
+        <td>¥115</td>
+        <td>¥0.0</td><td>¥8,280.0</td>
+        <td style="font-weight:800;">¥8,280.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥115</td>
+        <td>¥0.0</td><td>¥230.0</td>
+        <td style="font-weight:800;">¥230.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">2</span>
+        <span class="inf-name">文老师升学规划课堂</span>
+        <span class="inf-id">4015069908699412</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 43</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥4,945.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>43</td><td>0</td>
+        <td >0%</td>
+        <td>2.2</td><td>0.0</td>
+        <td>¥115</td>
+        <td>¥0.0</td><td>¥4,945.0</td>
+        <td style="font-weight:800;">¥4,945.0</td>
+      </tr></tbody></table></div></details><div class="inf-subtotal">
+    <span>小计：2 个达人 &nbsp;·&nbsp; 正常班 117 &nbsp;·&nbsp; 影子班 0 &nbsp;·&nbsp; 总结算 <b>¥13,455.0</b></span>
+  </div></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#b5451b;"></span>
+    <span class="ch-name">杭州三只咪</span>
+    <span class="ch-badge">7 个达人</span>
+    <span class="ch-badge">总结算 ¥4,456.5</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="inf-list"><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">1</span>
+        <span class="inf-name">刘老师思维课堂88</span>
+        <span class="inf-id">sphqjtLgwchVupj</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 25</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 3.8%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥2,770.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>24</td><td>1</td>
+        <td >4%</td>
+        <td>1.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥2,640.0</td>
+        <td style="font-weight:800;">¥2,640.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>1</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥130.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">2</span>
+        <span class="inf-name">小满老师思维课堂</span>
+        <span class="inf-id">sphrV3mdIwj9eLF</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 5</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 16.7%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥632.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>5</td><td>1</td>
+        <td class="alert-cell">16.67%</td>
+        <td>0.3</td><td>0.8</td>
+        <td>¥110</td>
+        <td>¥82.5</td><td>¥550.0</td>
+        <td style="font-weight:800;">¥632.5</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">3</span>
+        <span class="inf-name">浙大奥数张老师</span>
+        <span class="inf-id">2482036757501992</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 3</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥330.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>3</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥330.0</td>
+        <td style="font-weight:800;">¥330.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">4</span>
+        <span class="inf-name">北大奥数珊珊老师1</span>
+        <span class="inf-id">466612694034989</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 2</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥220.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥220.0</td>
+        <td style="font-weight:800;">¥220.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">5</span>
+        <span class="inf-name">(无名称)</span>
+        <span class="inf-id">4461146995168528</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 2</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥220.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>2</td><td>0</td>
+        <td >0%</td>
+        <td>0.1</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥220.0</td>
+        <td style="font-weight:800;">¥220.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">6</span>
+        <span class="inf-name">韩老师满分思维课</span>
+        <span class="inf-id">sphx7kguds4ZXeW</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 1</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 50.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥214.5</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>1</td><td>1</td>
+        <td class="alert-cell">50%</td>
+        <td>0.1</td><td>1.0</td>
+        <td>¥110</td>
+        <td>¥104.5</td><td>¥110.0</td>
+        <td style="font-weight:800;">¥214.5</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">7</span>
+        <span class="inf-name">宋老师思维学习力</span>
+        <span class="inf-id">sphDTYa7PilsI9B</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 0</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 100.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥130.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>0</td><td>1</td>
+        <td class="alert-cell">100%</td>
+        <td>0.0</td><td>1.0</td>
+        <td>¥130</td>
+        <td>¥130.0</td><td>¥0.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><div class="inf-subtotal">
+    <span>小计：7 个达人 &nbsp;·&nbsp; 正常班 38 &nbsp;·&nbsp; 影子班 4 &nbsp;·&nbsp; 总结算 <b>¥4,456.5</b></span>
+  </div></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#5a3060;"></span>
+    <span class="ch-name">合肥徽起</span>
+    <span class="ch-badge">1 个达人</span>
+    <span class="ch-badge">总结算 ¥2,310.0</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="inf-list"><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">1</span>
+        <span class="inf-name">初升高入团规划大课堂</span>
+        <span class="inf-id">sphbcBapbmnx6cc</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 19</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥2,310.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥110</td>
+        <td>¥0.0</td><td>¥880.0</td>
+        <td style="font-weight:800;">¥880.0</td>
+      </tr><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>7</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥910.0</td>
+        <td style="font-weight:800;">¥910.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>4</td><td>0</td>
+        <td >0%</td>
+        <td>0.2</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥520.0</td>
+        <td style="font-weight:800;">¥520.0</td>
+      </tr></tbody></table></div></details><div class="inf-subtotal">
+    <span>小计：1 个达人 &nbsp;·&nbsp; 正常班 19 &nbsp;·&nbsp; 影子班 0 &nbsp;·&nbsp; 总结算 <b>¥2,310.0</b></span>
+  </div></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#5a4030;"></span>
+    <span class="ch-name">山东深山</span>
+    <span class="ch-badge">1 个达人</span>
+    <span class="ch-badge">总结算 ¥1,040.0</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="inf-list"><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">1</span>
+        <span class="inf-name">徐老师讲升学(欢喜）</span>
+        <span class="inf-id">45539089189321</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 8</span>
+        <span class="ch-badge">影子班 0</span>
+        <span class="ch-badge">撞库率 0.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥1,040.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">初三(升高一)</td>
+        <td>8</td><td>0</td>
+        <td >0%</td>
+        <td>0.4</td><td>0.0</td>
+        <td>¥130</td>
+        <td>¥0.0</td><td>¥1,040.0</td>
+        <td style="font-weight:800;">¥1,040.0</td>
+      </tr></tbody></table></div></details><div class="inf-subtotal">
+    <span>小计：1 个达人 &nbsp;·&nbsp; 正常班 8 &nbsp;·&nbsp; 影子班 0 &nbsp;·&nbsp; 总结算 <b>¥1,040.0</b></span>
+  </div></div></details><details class="ch-block">
+  <summary class="ch-summary">
+    <span class="ch-dot lg" style="background:#2a4a8c;"></span>
+    <span class="ch-name">文思泉涌</span>
+    <span class="ch-badge">2 个达人</span>
+    <span class="ch-badge">总结算 ¥390.0</span>
+    <span class="expand-hint">展开 ▸</span>
+  </summary>
+  <div class="inf-list"><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">1</span>
+        <span class="inf-name">如愿升学规划指导号</span>
+        <span class="inf-id">sphu0c0IZ8aHKSj</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 0</span>
+        <span class="ch-badge">影子班 2</span>
+        <span class="ch-badge">撞库率 100.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥260.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>0</td><td>1</td>
+        <td class="alert-cell">100%</td>
+        <td>0.0</td><td>1.0</td>
+        <td>¥130</td>
+        <td>¥130.0</td><td>¥0.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr><tr>
+        <td class="td-left">高二(升高三)</td>
+        <td>0</td><td>1</td>
+        <td class="alert-cell">100%</td>
+        <td>0.0</td><td>1.0</td>
+        <td>¥130</td>
+        <td>¥130.0</td><td>¥0.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><details class="inf-block">
+      <summary class="inf-summary">
+        <span class="inf-rank">2</span>
+        <span class="inf-name">升学与规划</span>
+        <span class="inf-id">182993104679355</span>
+        <span class="ch-badge" style="margin-left:auto;">正常班 0</span>
+        <span class="ch-badge">影子班 1</span>
+        <span class="ch-badge">撞库率 100.0%</span>
+        <span class="ch-badge" style="background:#f0f7f0;color:#2e5a40;border-color:#c8e6c9;font-weight:700;">¥130.0</span>
+        <span class="expand-hint">展开 ▸</span>
+      </summary>
+      <div class="table-wrap" style="padding:0 0 0 48px;background:#fafbfc;">
+        <table style="font-size:12px;">
+          <thead><tr style="background:#f0f3f8;color:#3a4a6a;font-weight:600;">
+            <th>年级</th><th>正常班</th><th>影子班</th><th>撞库率</th>
+            <th>撞库5%基准</th><th>撞库应结</th><th>单价</th><th>撞库应结金额</th><th>单量应结</th><th>总结算</th>
+          </tr></thead><tbody><tr>
+        <td class="td-left">高一(升高二)</td>
+        <td>0</td><td>1</td>
+        <td class="alert-cell">100%</td>
+        <td>0.0</td><td>1.0</td>
+        <td>¥130</td>
+        <td>¥130.0</td><td>¥0.0</td>
+        <td style="font-weight:800;">¥130.0</td>
+      </tr></tbody></table></div></details><div class="inf-subtotal">
+    <span>小计：2 个达人 &nbsp;·&nbsp; 正常班 0 &nbsp;·&nbsp; 影子班 3 &nbsp;·&nbsp; 总结算 <b>¥390.0</b></span>
+  </div></div></details></div></div>
   <div id="price"><div class="card">
   <div class="card-title" style="background:#5c3d8f;">单价参考表</div>
   <div class="table-wrap"><table>
